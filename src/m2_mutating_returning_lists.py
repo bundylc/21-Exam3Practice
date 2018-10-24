@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  MUTATING  and  RETURNING-NEW  LISTS.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Landon Bundy.
+"""  # TODOs: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -37,7 +37,7 @@ def main():
 def run_test_doubler():
     """ Tests the    doubler    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # TODOd: 2. Implement this TEST function.
     #   It TESTS the  doubler  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #
@@ -79,13 +79,64 @@ def run_test_doubler():
     print('The returned value is:       ', answer)
     print('The returned value should be:', expected)
 
+    # Test 2:
+    arg1 = [1, -2, 3, 4]
+    arg2 = [5, 6, 7]
+    correct_arg1_after = [2, -4, 6, 8]
+    correct_arg2_after = [5, 6, 7]
+    expected = [10, 12, 14]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg1)
+    print('  Argument 2 is:', arg2)
+
+    answer = doubler(arg1, arg2)
+
+    print('AFTER the function call:')
+    print('  Argument 1 is:       ', arg1)
+    print('  Argument 1 should be:', correct_arg1_after)
+    print('  Argument 2 is:       ', arg2)
+    print('  Argument 2 should be:', correct_arg2_after)
+    print('The returned value is:       ', answer)
+    print('The returned value should be:', expected)
+
+    # Test 3:
+    arg1 = [101, -32, 203, 44]
+    arg2 = [57, 6, 85]
+    correct_arg1_after = [202, -64, 406, 88]
+    correct_arg2_after = [57, 6, 85]
+    expected = [114, 12, 170]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg1)
+    print('  Argument 2 is:', arg2)
+
+    answer = doubler(arg1, arg2)
+
+    print('AFTER the function call:')
+    print('  Argument 1 is:       ', arg1)
+    print('  Argument 1 should be:', correct_arg1_after)
+    print('  Argument 2 is:       ', arg2)
+    print('  Argument 2 should be:', correct_arg2_after)
+    print('The returned value is:       ', answer)
+    print('The returned value should be:', expected)
+
     # ------------------------------------------------------------------
     # TO DO 2 (continued): Add your ADDITIONAL test(s) here:
     # ------------------------------------------------------------------
 
 
 def doubler(list1, list2):
-    """
+    list3 = []
+    for k in range(len(list1)):
+        list1[k] = list1[k] * 2
+    for m in range(len(list2)):
+        list3.append(list2[m] * 2)
+    return list3
+
+"""
     Both arguments are lists of integers.  This function:
       -- MUTATEs the first list by doubling each number in the list
     and
